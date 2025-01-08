@@ -211,8 +211,10 @@ const Payment = ({
             onClick={handleSubmit}
             isLoading={isLoading}
             disabled={
-              (isStripe && !cardComplete) ||
-              (!selectedPaymentMethod && !paidByGiftcard)
+              isStripe &&
+              !cardComplete &&
+              !selectedPaymentMethod &&
+              !paidByGiftcard
             }
             data-testid="submit-payment-button"
           >
